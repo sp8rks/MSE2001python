@@ -1,6 +1,6 @@
 import pandas as pd
 
-filename = r'class_exercises/fantasy_sets.csv'
+filename = r'data_for_exercises/fantasy_sets.csv'
 df = pd.read_csv(filename)
 
 LoTR = df['LOTR'].dropna()
