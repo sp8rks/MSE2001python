@@ -12,4 +12,4 @@ C = False
 dog = "Scout"
 cat = ""
 birds = None
-neg_number = -6.75
+neg_number = -6.7
