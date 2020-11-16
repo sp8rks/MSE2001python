@@ -1,18 +1,24 @@
-# first_name = input("What is your first name?: ")
-# last_name = input("What is your last name?: ")
+def f2c (temp = 15):
+    new_temp = (temp-32)*5/9
+    return new_temp
 
-# def name_joiner(a, b):
-#     name = a+b
-#     return(name)
+t1 = 75 #23C
+t2 = 50 #10C
 
-# dict1 = {}
-# dict1['Name'] = name_joiner(first_name, last_name)
-
-
-def pythagorean(a, b):
-    return((a**2+b**2)**(0.5))
+tempC = f2c()
 
 
-a = 3
-b = 4
-print(pythagorean(a,b))
+
+def try_recursion(i):
+    if i>0:
+        result = i + try_recursion(i-1)
+        print(result)
+    else:
+        result = 0
+    return result
+
+try_recursion(5)
+
+
+list_of_words = ['caterpillar', 'puppy', 'bat', 'monster']
+list_of_words.sort(key=lambda x: len(set(list(x))))
