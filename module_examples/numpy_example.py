@@ -40,4 +40,4 @@ reshaped_array = (array_1D.reshape(2,6)).T
 
 
 
-plt.savefig('Scout_new.png', dpi=300,bbox_inches="tight")
+plt.savefig('data_for_exercises/Scout_new.png', dpi=300,bbox_inches="tight")
