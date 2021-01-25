@@ -23,3 +23,5 @@ new_list.clear()
 fellowship.reverse()
 copy_of_list1 = grocery_list1.copy()
 grocery_list1.pop(1)
+
+
