@@ -142,7 +142,6 @@ answer = 6
 
 if np.isclose(your_answer, answer):
     print('You are correct')
-    student.HWScores[0] = 1  # add score for correct execution of Q0
 else:
     print('Check your code')
 # ###### CODE BLOCK TO DETERMINE WHETHER THE FUNCTION WORKS AS INTENDED ##### #
