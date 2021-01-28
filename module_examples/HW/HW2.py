@@ -287,7 +287,7 @@ else:
 
 # %%
 # =============================================================================
-#     Q4 Build a function that accepts a dictionary containing lattice 
+#     Q4 Build a function that accepts a list of dictionaries containing lattice 
 #       parameters a, b, and c as well as angles alpha, beta, and gamma all 
 #       stored as keywords with values and then returns the crystal system. 
 #       (cubic, orthorhombic, tetragonal, hexagonal, trigonal, monoclinic, or 
@@ -308,16 +308,27 @@ else:
 
 
 
+
 # ###### CODE BLOCK TO DETERMINE WHETHER THE FUNCTION WORKS AS INTENDED ##### #
-compound = {'a':5.245,'b':5.245,'c':7.000,'alpha':90,'beta':90,'gamma':120}
-your_answer = crystal_system_classifier(compound)
-print('Q4: You answered {}'.format(your_answer))
-answer = 'hexagonal'
-if answer == your_answer:
+compound1 = {'a':5.245,'b':5.245,'c':7.000,'alpha':90,'beta':90,'gamma':120}
+compound2 = {'a':5.245,'b':5.245,'c':5.245,'alpha':90,'beta':90,'gamma':90}
+compound3 = {'a':5.245,'b':6.533,'c':7.000,'alpha':90,'beta':90,'gamma':90}
+compound4 = {'a':4.667,'b':4.667,'c':4.667,'alpha':78,'beta':78,'gamma':78}
+compound5 = {'a':4.667,'b':3.456,'c':4.567,'alpha':90,'beta':109,'gamma':90}
+compound6 = {'a':1.555,'b':8.954,'c':12.314,'alpha':65,'beta':109,'gamma':90}
+compound7 = {'a':6.655,'b':8.343,'c':6.655,'alpha':90,'beta':90,'gamma':90}
+compounds = [compound1,compound2,compound3,compound4,compound5,compound6,compound7]
+your_answers = [crystal_system_classifier(compound) for compound in compounds]
+
+print('Q4: You answered {}'.format(your_answers))
+answer = ['hexagonal','cubic','orthorhombic','trigonal', 'monoclinic',
+          'triclinic','tetragonal']
+if answer == your_answers:
     print("You are correct")
 else:
     print("Incorrect crystal system. Check your code")
 ###### CODE BLOCK TO DETERMINE WHETHER THE FUNCTION WORKS AS INTENDED ##### #
+
 
 
 # %%
@@ -342,7 +353,7 @@ else:
 
 # ###### CODE BLOCK TO DETERMINE WHETHER THE FUNCTION WORKS AS INTENDED ##### #
 try:
-    your_answer = appropriate_tip(your_inputs)  # will inspect this one.
+    your_answer = appropriate_tip(25.75,1)  # will inspect this one.
 except:
     print("there seems to be an issue with your function")
 # ###### CODE BLOCK TO DETERMINE WHETHER THE FUNCTION WORKS AS INTENDED ##### #
@@ -371,7 +382,7 @@ ans1 = [and_gate(1, 1) == 1,
        and_gate(1, 0) == 0,
        and_gate(0, 1) == 0,
        and_gate(0, 0) == 0]
-print('Q4: You answered {}'.format(ans))
+print('Q4: You answered {}'.format(ans1))
 
 if all(ans1):
     print("You are correct")
@@ -399,11 +410,11 @@ else:
 
 
 # ###### CODE BLOCK TO DETERMINE WHETHER THE FUNCTION WORKS AS INTENDED ##### #
-ans2 = [or_gate(1, 1) == 0,
+ans2 = [or_gate(1, 1) == 1,
        or_gate(1, 0) == 1,
        or_gate(0, 1) == 1,
-       or_gate(0, 0) == 1]
-print('Q4: You answered {}'.format(ans))
+       or_gate(0, 0) == 0]
+print('Q4: You answered {}'.format(ans2))
 
 if all(ans2):
     print("You are correct")
