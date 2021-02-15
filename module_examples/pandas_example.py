@@ -3,6 +3,20 @@ import numpy as np
 import matplotlib.pyplot as plt
 from pandas_profiling import ProfileReport
 
+
+#my_var = {'a':[1,2,3,4,5],'b':[6,7,8,9,10],'c':[11,12,13,14,15],'d':[16,17,18,19,20]}
+my_var = {'steel':[1,None,3,4,5],'aluminum':[6,7,8,9,10],'ceramic':[11,12,13,14,15],'polymer':[16,17,18,19,20]}
+
+my_df = pd.DataFrame(my_var)
+my_df.dropna(inplace=True)
+#total = my_df['steel'].sum()
+#print((my_df['polymer']).loc[[2,3]])
+
+
+
+
+# %%
+
 df = pd.read_csv('data_for_exercises/UFO.csv')
 
 #df = df.drop(df.columns[6],axis=1)
