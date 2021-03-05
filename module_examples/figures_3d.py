@@ -27,6 +27,9 @@ ax.scatter3D(xdata, ydata, zdata, c=zdata, cmap='winter_r');
 # %%
 #3D contour and surface plots
 
+
+
+
 def f(x, y):
     return np.sin(np.sqrt(x ** 2 + y ** 2))
 
