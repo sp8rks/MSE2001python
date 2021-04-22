@@ -8,16 +8,17 @@ noise = np.random.randint(-10,10,11)
 y_data = np.add(y_data,noise)
 
 fig = plt.figure(1, figsize=(5,5))
-plt.semilogy(x_data,y_data,marker='o',markersize=10,mfc='white',
-         linestyle='--', label='$y=x^2$')
+plt.semilogy(x_data,y_data,marker='o',markersize=10,markerfacecolor='white',
+         linestyle='--', label='$y=x^2$', color='maroon')
 plt.semilogy(x_data,y_data+500,marker='s',markersize=10,mfc='white',
-         linestyle='-', label='$y=x^2+500$')
+         linestyle='-', label='$y=x^2+500$',alpha=0.5)
 
 plt.xlabel('x variable')
 plt.ylabel('y label')
-plt.legend()
-plt.show()
+plt.legend(loc='best')
 
+plt.savefig('xy.png', dpi=300,bbox_inches="tight")
+plt.show()
 # %%
 
 rings = {'elves':3, 'men' : 9,'dwarves':7,'sauron':1}
@@ -27,9 +28,9 @@ lists = sorted(rings.items(), key=lambda item : item[1])
 x,y = zip(*lists)
 
 #plt.bar(x,y)
-plt.barh(x,y)
+#plt.barh(x,y)
 explode = (0,0.1,0,0)
-#plt.pie(y, labels=x, explode=explode)
+plt.pie(y, labels=x, explode=explode)
 
 # %%
 x_data = np.arange(0,50,1)
@@ -42,7 +43,12 @@ plt.scatter(x_data,y_data,c=colors,s=area,alpha=0.8)
 # %%
 failure_data = np.random.normal(size=300000)*200
 
-plt.hist(failure_data,bins=50)
+plt.hist(failure_data,bins=500)
+
+# %%
+failure_data = np.random.normal(size=300000)*200
+
+plt.hist(failure_data,bins=20)
 
 # %%
 

@@ -13,7 +13,7 @@ filename = r'data_for_exercises/XRD_Rietveld.csv'
 df = pd.read_csv(filename)
 
 #pull data from CSV
-x_data = df['x'].dropna()
+x_data = df['Q'].dropna()
 y_obs = df['y_obs'].dropna()
 y_fit = df['y_calc'].dropna()
 y_bkg = df['y_bkg'].dropna()
@@ -24,8 +24,8 @@ hkl2 = df['phase 2'].dropna()
 #hkl4 = df['phase 4']
 
 #Set the limits of the plot
-xmin=15
-xmax=100
+xmin=0.95
+xmax=5.4
 
 #Generate Ram's color palette
 seshadri = ['#c3121e', '#0348a1', '#ffb01c', '#027608', '#0193b0', '#9c5300', '#949c01', '#7104b5']
@@ -51,21 +51,21 @@ plt.plot(x_data, y_fit-y_obs, label='difference', linestyle='-',
 #Define ticks labels and legend
 plt.tick_params(direction='in',right=True, top=True)
 plt.tick_params(labelbottom=True, labeltop=False, labelright=False, labelleft=False)    
-xticks = np.arange(0, 101, 20)
+xticks = np.arange(0, 5.5, 1)
 yticks = np.arange(0,10000,2000)
 plt.minorticks_on()
 plt.tick_params(direction='in',which='minor', length=5, bottom=True, top=True, left=True, right=True)
 plt.tick_params(direction='in',which='major', length=10, bottom=True, top=True, left=True, right=True)
 plt.xticks(xticks)
 plt.yticks(yticks)
-plt.xlabel('2$\\theta$') 
+plt.xlabel('$Q\,(\AA^{-1})$') 
 plt.ylabel('Intensity (arbitrary units)')  
 plt.legend(fontsize=11)
 plt.xlim(xmin,xmax)
 
 #don't forget to label weight fractions of phases
-plt.text(66,4200,'Co$_3$O$_4$=40wt%')
-plt.text(66,3600,'CoO=60wt%')
+plt.text(3.2,4200,'Co$_3$O$_4$=40wt%')
+plt.text(3.2,3600,'CoO=60wt%')
 
 #HKL position plot for phase 1
 xtr_subsplot = fig.add_subplot(gs[0:1,0:1])
@@ -75,7 +75,7 @@ for xc in hkl1.values:
 plt.tick_params(direction='in',bottom=False, right=True, top=False)
 plt.tick_params(labelleft=False, labelbottom=False)
 plt.xlim(xmin,xmax)
-plt.text(102,0.3,'Co$_3$O$_4$')
+plt.text(5.6,0.3,'Co$_3$O$_4$')
 
 #HKL position plot for phase 2
 xtr_subsplot = fig.add_subplot(gs[1:2,0:1])
@@ -85,7 +85,7 @@ for xc in hkl2.values:
 plt.tick_params(direction='in',bottom=False, right=True, top=False)
 plt.tick_params(labelleft=False, labelbottom=False)
 plt.xlim(xmin,xmax)
-plt.text(102,0.3,'CoO')
+plt.text(5.6,0.3,'CoO')
 
 #Export figure
 #plt.savefig('example1.pdf')
