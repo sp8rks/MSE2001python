@@ -87,7 +87,7 @@ plt.ylim(ymin,ymax)
 
 
 #Create axes labels
-plt.ylabel('Transparency %')  
+plt.ylabel(r'Transparency % $\alpha$')  
 #plt.xlabel('Wavelength (nm)')
 plt.text(645,52,'Wavelength (nm)')
 

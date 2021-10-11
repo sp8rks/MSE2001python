@@ -100,7 +100,8 @@ host.tick_params(axis='y', colors=seshadri[1], **tkw)
 par1.tick_params(axis='y', colors=seshadri[0], **tkw)
 par2.tick_params(axis='y', colors=seshadri[4], **tkw)
 host.tick_params(direction='in', **tkw)
-
+par1.spines["right"].set_edgecolor(p2.get_color())
+par2.spines["right"].set_edgecolor(p3.get_color())
 
 lines = [p1, p4, p2, p5, p3, p6, p7, p8]
 
