@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 
+plt.rcParams['font.size']=14
 
 path = r'data_for_exercises/'
 filename = r'generic_single_plot.csv'
