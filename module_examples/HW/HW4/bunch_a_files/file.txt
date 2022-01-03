@@ -1,7 +1,0 @@
-1, fish
-2, cat
-3, dog
-4, fern
-5, mole
-6, pencil
-7, headphones
