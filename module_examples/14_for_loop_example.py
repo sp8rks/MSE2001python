@@ -31,3 +31,43 @@ while liar ==True:
     age = int(input("What\'s your age?"))
     if age > 0:
         liar = False
+
+# %%
+name_list = [['kai','hardmin'],['jeremy','baird'],['Halli','Thompson']]
+
+for x in range(0,10):  only works if we know length ahead of time
+
+ for x in range(0,len(name_list)):
+     print(name_list[x])
+
+
+for x in name_list:
+    #print(x)
+    #print(x[0])
+    #print(x[1])
+    for y in x:
+        
+        if y == 'jeremy':
+            break
+        print(y)
+
+
+
+
+
+for i,x in enumerate(name_list):
+    print(i)
+    print(x)
+
+#try it for a dictionary
+name_dict = {"formula": "ABO3",'color':'grey'}
+for i,x in enumerate(name_dict):
+    print(i)
+    print(x)
+
+newlist = [x for x in name_list if "kai" in x]
+dict_variable = {key:value for (key,value) in name_dict.items()}
+
+
+while(x!=5):
+    x=input('type a number:')

@@ -48,8 +48,10 @@ def my_recursion(i):
         return None
     else:
         print(i)
-    i = i - 1
+    #i = i - 1
+    i -= 1
     my_recursion(i)
 
 
 my_recursion(5)
+
