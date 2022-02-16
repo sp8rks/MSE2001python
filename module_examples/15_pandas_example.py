@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from pandas_profiling import ProfileReport
+#from pandas_profiling import ProfileReport
 
 
 #my_var = {'a':[1,2,3,4,5],'b':[6,7,8,9,10],'c':[11,12,13,14,15],'d':[16,17,18,19,20]}
@@ -13,16 +13,13 @@ my_df.dropna(inplace=True)
 #print((my_df['polymer']).loc[[2,3]])
 
 
-
-
 # %%
 
 df = pd.read_csv('data_for_exercises/UFO.csv')
 
-#df = df.drop(df.columns[6],axis=1)
+df = df.drop(df.columns[6])
 
 df = df.drop('duration (hours/min)',axis=1)
-
 df['longitude'].describe()
 df['latitude'].describe()
 df['duration (seconds)'].describe()
@@ -55,7 +52,7 @@ print(f'Cleaned DataFrame shape: {df2.shape}')
 
 #value_counts
 x = df['shape'].value_counts()
-#df['shape'].value_counts().plot.bar()
+df['shape'].value_counts().plot.bar()
 
 #groupby
 y=df.groupby(['shape']).mean()
@@ -87,10 +84,3 @@ df.loc[df['comments'].str.contains('UFO',na=False),['comments','latitude']]=['XX
 # geolocator = Nominatim(user_agent="Your_name")
 # location = geolocator.reverse((spots['latitude'][0]+', '+spots['latitude'][1]), timeout=None)
 # print("The Garden of Eden is",location.raw['address']['country'])
-
-
-
-
-
-
-
