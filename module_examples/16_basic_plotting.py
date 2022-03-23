@@ -2,14 +2,16 @@ import numpy as np
 import matplotlib.pyplot as plt
 plt.rcParams.update({'font.size' : 14})
 
+
 x_data = np.arange(0,101,10)
 y_data = x_data**2
 noise = np.random.randint(-10,10,11)
-y_data = np.add(y_data,noise)
+y_data = np.add(y_data,noise*20)
 
 fig = plt.figure(1, figsize=(5,5))
-plt.semilogy(x_data,y_data,marker='o',markersize=10,markerfacecolor='white',
-         linestyle='--', label='$y=x^2$', color='maroon')
+#plt.plot(x_data,y_data)
+plt.semilogx(x_data,y_data,marker='o',markersize=10,markerfacecolor='white',
+         linestyle='--', label='$y=x^2$', color='#654987')
 plt.semilogy(x_data,y_data+500,marker='s',markersize=10,mfc='white',
          linestyle='-', label='$y=x^2+500$',alpha=0.5)
 
@@ -41,9 +43,9 @@ fig = plt.figure(1, figsize=(5,5))
 plt.scatter(x_data,y_data,c=colors,s=area,alpha=0.8)
 
 # %%
-failure_data = np.random.normal(size=300000)*200
+failure_data = np.random.normal(size=30000)*200
 
-plt.hist(failure_data,bins=500)
+plt.hist(failure_data,bins=50)
 
 # %%
 failure_data = np.random.normal(size=300000)*200
