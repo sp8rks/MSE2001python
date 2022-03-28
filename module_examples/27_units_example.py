@@ -5,6 +5,7 @@ from molmass import Formula
 
 #simple conversion tool for one time conversion
 convert('60 m/s', 'km/h')
+convert('100 mile/h','km/h')
 
 
 #or we can use Pint!
@@ -18,12 +19,12 @@ speed = Q(60,'m/seconds')
 distance = Q(8,'m')
 time = Q(15,'seconds')
 speed = distance / time
-#print(speed.to('m/seconds'))
+#print(speed.to('km/hr'))
 speed = speed.to(u.km / u.hour)
 
 
 c = Q(cnst.c,'m/s')
-lightyear = c * Q(1,'year')
+lightyear = c * Q(12,'month')
 print(lightyear.to('m'))
 
 
@@ -33,8 +34,8 @@ NaCl = Formula('NaCl')
 mass = formulas_per_cell*Q(NaCl.mass,'g/mole') / Q(cnst.Avogadro, '1/mole')
 volume = Q(0.563,'nm')**3
 density = mass/volume
-print(density.to('grams/cm^3'))
-
+#print(density.to('grams/cm^3'))
+print(density.to('grams/nm^3'))
 
 #customs units
 u.define('smoot=1.702m=sm')
@@ -49,7 +50,8 @@ e = Q(cnst.e,'coulombs')
 sigma = n*mu*e
 print(sigma.to('ohms^-1*m^-1'))
 
-
+#to check your current units you can use .units attribute
+sigma.units
 
 
 
