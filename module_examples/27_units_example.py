@@ -54,6 +54,34 @@ print(sigma.to('ohms^-1*m^-1'))
 sigma.units
 
 
+# %% 
+#how about an example!
+from unit_converter.converter import convert
+import pint
+import scipy.constants as cnst
+from molmass import Formula
+
+#methane combustion
+#CH4+2O2 ->2H2O+CO2
+
+#how many grams of water are produced for every liter of methane?
+#PV=nRT
+#n_methane=PV/RT
+#assume 1atm, 300K
+
+#first get pints classes ready
+u = pint.UnitRegistry()
+Q = u.Quantity
+
+n_methane = Q(1,'atm')*Q(1,'L')/(Q(cnst.R,'J/mol/K')*Q(300,'K'))
+#print(n_methane.to('mol'))
+
+#for every 1 mol of CH4, we make 2 moles of H2O
+n_H2O = 2*n_methane
+H2O = Formula('H2O')
+m_H2O = n_H2O*Q(H2O.mass,'g/mol')
+print(m_H2O.to('g'))
+
 
 
 
