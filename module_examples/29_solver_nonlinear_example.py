@@ -31,9 +31,17 @@ def my_function(z):
     F[1]=x**2+y**2-7
     return F
 
-zGuess = np.array([3,-3])
-z = fsolve(my_function,zGuess)
-print(z)
+# zGuess = np.array([3,3])
+# z = fsolve(my_function,zGuess)
+# print(z)
+
+array_of_guesses = [np.array([3,-3]),np.array([3,3]),
+                    np.array([-3,3]),np.array([-3,-3])]
+
+for guess in array_of_guesses:
+    zGuess = guess
+    z = fsolve(my_function,zGuess)
+    print(z)
 
 # %%
 from gekko import GEKKO
