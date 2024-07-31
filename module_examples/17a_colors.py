@@ -19,8 +19,8 @@ x3 = df['x3'].dropna()
 y3 = df['y3'].dropna()
 
 #bodacious colors
-colors=sns.color_palette("rocket",3) #personal fav 
-colors=sns.color_palette("crest",3) #also nice
+colors=sns.color_palette("rocket",6) #personal fav 
+colors=sns.color_palette("crest",6) #also nice
 
 #Ram's colors, if desired
 seshadri = ['#c3121e', '#0348a1', '#ffb01c', '#027608', '#0193b0', '#9c5300', '#949c01', '#7104b5']
@@ -29,15 +29,18 @@ seshadri = ['#c3121e', '#0348a1', '#ffb01c', '#027608', '#0193b0', '#9c5300', '#
 
 #plot
 fig = plt.figure(1, figsize=(5, 5))
-plt.semilogx(x3, y3, linestyle='-', marker='^', label='ammonium perchlorate', color=colors[2], mfc='w', markersize=8) # plot data
-plt.semilogx(x2, y2, linestyle='-', marker='s', label='iron oxide', color=colors[1], mfc='w', markersize=8) # plot data
-plt.semilogx(x, y, linestyle='-', marker='o', label='aluminum', color=colors[0], mfc='w', markersize=8) # plot data
+plt.semilogx(x3, y3, linestyle='-', marker='^', label='ammonium perchlorate', color=colors[5], mfc='w', markersize=8) # plot data
+plt.semilogx(x2, y2, linestyle='-', marker='s', label='iron oxide', color=colors[4], mfc='w', markersize=8) # plot data
+plt.semilogx(x, y, linestyle='-', marker='o', label='aluminum', color=colors[3], mfc='w', markersize=8) # plot data
+plt.semilogx(x3, y3-4, linestyle='-', marker='^', label='ammonium perchlorate', color=colors[2], mfc='w', markersize=8) # plot data
+plt.semilogx(x2, y2-4, linestyle='-', marker='s', label='iron oxide', color=colors[1], mfc='w', markersize=8) # plot data
+plt.semilogx(x, y-4, linestyle='-', marker='o', label='aluminum', color=colors[0], mfc='w', markersize=8) # plot data
 
 #plt.plot(x_fit, ffit(x_fit), linestyle='-', marker='None', label='fit', color=colors[0], markerfacecolor='white', markersize=8) # plot data
 
 #plot params
 plt.xlim([1,1e4])
-plt.ylim([-0.5,16])
+plt.ylim([-5,16])
 plt.minorticks_on()
 plt.tick_params(direction='in',right=True, top=True)
 plt.tick_params(labelsize=14)
